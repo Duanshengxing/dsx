@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    {% for grade in data_list %}
+        <p>{{ grade.name }}     {{ grade.date }}    {{ grade.girl_num }}       {{ grade.boy_num }}    {{ grade.is_delete }}</p>
+    {% endfor %}
+</body>
+</html>

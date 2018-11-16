@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='movies.css') }}">
+</head>
+<body>
+    <div>
+        <button id="btn1">正在上映</button>
+        <button id="btn2">即将上映</button>
+        
+    </div>
+    <ul id="list">
+        <!--<li><img src="https://img.alicdn.com/bao/uploaded/i3/TB14dXBMXXXXXc2XpXXXXXXXXXX_.jpg" alt=""></li>-->
+    </ul>
+    <script src="{{ url_for('static',filename='jquery-2.1.0.js')}}"></script>
+    <script src="{{ url_for('static',filename='movie.js')}}"></script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block header %}
+    <header>
+        <div>登录</div>
+    </header>
+{% endblock %}
+
+{% block extcss %}
+    <link rel="stylesheet" href="{% static 'app/user/login.css' %}">
+{% endblock %}
+
+
+{% block extjs %}
+    <script src="{% static 'app/user/login.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+         <form action="{% url 'AXF:login' %}" method="post" enctype="multipart/form-data" >
+             {% csrf_token %}
+        <div class="form-group">
+            <label>用户名</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="6-18为数字字母下划线">
+            <p id="user-tip"></p>
+        </div>
+        <div class="form-group">
+            <label>密码</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="8位以上字符">
+            <p id="password-tip"></p>
+        </div>
+        <p id="show_warning" style="color: red">{{ msg }}</p>
+        <button type="submit" class="btn btn-success" id="login">登录</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'base_main.html' %}
+
+{% load static %}
+
+{% block extcss %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'app/home/home.css' %}">
+{% endblock %}
+
+{% block title %}
+    首页
+{% endblock %}
+
+{% block content %}
+    <div id="home">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for wheel in wheels %}
+                    <div class="swiper-slide"><img src="{{ wheel.img }}" width="100%" height="30%"></div>
+                {% endfor %}
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
+        {#    导航数据#}
+        <div class="topMenu">
+            <nav>
+                <ul>
+                    {% for nav in navs %}
+                        <li>
+                            <img src="{{ nav.img }}"/>
+                            <span>{{ nav.name }}</span>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            </nav>
+        </div>
+{#        必购数据#}
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block extjs %}
+
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            {#direction: 'vertical', // 垂直切换选项#}
+            loop: true, // 循环模式选项
+
+            // 如果需要分页器
+            pagination: '.swiper-pagination',
+
+            // 如果需要前进后退按钮
+
+            prevButton: '.swiper-button-prev',
+            nextButton: '.swiper-button-next',
+        })
+    </script>
+    <script>
+
+    </script>
+{% endblock %}

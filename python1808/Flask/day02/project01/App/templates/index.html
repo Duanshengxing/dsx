@@ -1,0 +1,25 @@
+{% extends 'base_main.html' %}
+
+{% block header %}
+    {{ super() }}
+    <p>
+    胡仙仙爱上了范冰冰
+    </p>
+{% endblock %}
+
+{% macro hello(name) %}
+    <p>{{ name }}</p>
+{% endmacro %}
+
+
+
+{% block content %}
+    {% include 'index_inclue.html' %}
+
+    {{ hello("李嘉诚") }}
+
+    {% from 'common.html' import print_person %}
+    {{ print_person('宝强','33') }}
+    {{ print_person('仙仙','18') }}
+
+{% endblock %}

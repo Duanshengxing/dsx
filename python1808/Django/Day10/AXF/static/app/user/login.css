@@ -1,0 +1,21 @@
+header{
+    width: 100%;
+    height: 1.5rem;
+    background: orange;
+    margin-bottom:0.4rem ;
+
+}
+
+header div{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    color: white;
+    font-size: 0.5rem;
+    line-height: 1.5rem;
+
+}
+
+#login{
+    width: 100%;
+}

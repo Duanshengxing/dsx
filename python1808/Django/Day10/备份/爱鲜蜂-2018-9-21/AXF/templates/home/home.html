@@ -1,0 +1,25 @@
+{% extends 'base_main.html' %}
+{% load static %}
+
+{% block extcss %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'app/home/home.css' %}">
+{% endblock %}
+
+
+{% block title %}
+    首页
+{% endblock %}
+
+{% block content %}
+    <div id="home">
+
+        {% for wheel in wheels %}
+            <p>
+                <img src="{{ wheel.img }}" width="300" height="200" />
+            </p>
+        {% endfor %}
+
+
+    </div>
+{% endblock %}

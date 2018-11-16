@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+   <ul>
+    <li>书名：{{ book_info.title }}</li>
+    <li><a href="{% url 'author:detail' book_info.author_id %}"> 作者：{{ book_info.author }}</a></li>
+    <li><a href="{% url 'publisher:detail' book_info.publishers.id %}"> 出版社：{{ book_info.publishers }}</a></li>
+    <li>出版日期：{{ book_info.publish_date }}</li>
+   </ul>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            font-size: 30px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"  />
+</head>
+<body>
+
+
+    {% for person in page_content %}
+        <p>{{ person.name }} {{ person.age }}</p>
+    {% endfor %}
+
+   <nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li>
+      <a href="{% url 'page:index' before_page %}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+
+    {% for page in page_list %}
+        {% if cur_page == page%}
+           <li> <a style="color: red;" href=" {% url 'page:index' cur_page %}">
+        {% else %}
+            <li><a href=" {% url 'page:index' cur_page %}">
+        {% endif %}
+         {{ page }}</a></li>
+
+{#    <li><a href="#">1</a></li>#}
+{#    <li><a href="#">2</a></li>#}
+{#    <li><a href="#">3</a></li>#}
+{#    <li><a href="#">4</a></li>#}
+{#    <li><a href="#">5</a></li>#}
+      {% endfor %}
+    <li>
+      <a href="{% url 'page:index' next_page %}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+</body>
+</html>

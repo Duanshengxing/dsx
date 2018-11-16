@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for book in book_all %}
+        <li><a href="{% url 'book:detail' book.title%}" >书名：{{ book.title }}</a></li>
+    {% endfor %}
+
+</body>
+</html>

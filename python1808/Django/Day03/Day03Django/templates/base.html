@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}
+        首页
+    {% endblock %}</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    {% block extcss %}
+
+    {% endblock %}
+</head>
+<body>
+    {% block header %}
+{#        <div style="width: 100%; height: 100px;background: orange">头部</div>#}
+        {% include 'nav/nav.html' %}
+    {% endblock %}
+
+
+    {% block content %}
+        <div>content</div>
+    {% endblock %}
+
+    {% block footer %}
+        <div>footer</div>
+        {% include 'footer/footer.html' %}
+    {% endblock %}
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    {% block extjs %}
+
+    {% endblock %}
+</body>
+</html>

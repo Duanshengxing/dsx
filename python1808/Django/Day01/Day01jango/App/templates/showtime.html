@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>当前时间</p>
+    <p id="p1"></p>
+    <script>
+        var p1 = document.getElementById('p1');
+        time_begin = getNowFormatDate();
+        p1.innerText = time_begin;
+        function getNowFormatDate() {
+            var time = new Date();
+            hour = time.getHours();
+            year = time.getFullYear();
+            month = time.getMonth();
+            day = time.getDay();
+            minite = time.getMinutes();
+            second = time.getSeconds();
+            ctime = `${year}-${month}-${day} ${addZero(hour)}:${addZero(minite)}:${addZero(second)}`;
+            return ctime
+        }
+
+        function addZero(obj){
+            if (String(obj).length < 2){
+                str = '0'+String(obj);
+                return str
+            }
+            return String(obj)
+        }
+       time = setInterval(function () {
+           var time2 = getNowFormatDate();
+
+           p1.innerText = time2;
+
+       },1000)
+    </script>
+</body>
+</html>

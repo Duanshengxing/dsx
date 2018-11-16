@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table cellpadding="10px" cellspacing="0" border="1">
+         <tr>
+            <td>书名</td>
+            <td>出版日期</td>
+            <td>作者</td>
+
+            <td>出版社</td>
+
+
+        </tr>
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.date }}</td>
+            <td><a href="{{ url_for('blue.author_detail',id=author.id) }}"></a>{{ author.name }}</td>
+            <td>
+            {% for publisher in publishers %}
+            <p><a href="{{ url_for('blue.publisher_detail',id=publisher.id) }}">{{ publisher.name }}</a></p>
+            {% endfor %}
+
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>
